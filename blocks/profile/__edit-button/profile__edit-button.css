@@ -1,0 +1,10 @@
+.profile__edit-button {
+  position: absolute;
+  bottom: 6px;
+  right: -28px;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #FFF;
+  box-sizing: border-box;
+  background: url(../../../images/edit-icon.png) center no-repeat;
+}
