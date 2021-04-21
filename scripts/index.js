@@ -22,10 +22,9 @@ function formSubmitHandler (evt) {
   let jobValue = jobInput.value;
   let profileName = document.querySelector('.profile__name');
   let profileOcupation = document.querySelector('.profile__description');
-  let savePopup = document.querySelector('.popup__submit');
   profileName.textContent = nameValue;
   profileOcupation.textContent = jobValue;
-  savePopup.addEventListener('click', togglePopup);
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', togglePopup);

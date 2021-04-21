@@ -5,3 +5,15 @@
   line-height: 17px;
   margin: 8px auto 0px;
 }
+
+@media (min-width: 768px) {
+  .profile__description {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile__description {
+    max-width: 300px;
+  }
+}
