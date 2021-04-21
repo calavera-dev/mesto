@@ -1,2 +1,8 @@
 .profile__info {
 }
+
+@media (min-width: 768px) {
+  .profile__info {
+    margin: 0px 0px 0px 30px;
+  }
+}

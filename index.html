@@ -14,7 +14,7 @@
     </div>
   </header>
 
-  <div class="profile body-container">
+  <section class="profile body-container">
     <img src="./images/Jacques-Yves Cousteau.jpg" alt="Жак Ив Кусто" class="profile__image">
     <div class="profile__info">
       <div class="profile__block">
@@ -24,6 +24,63 @@
       <p class="profile__description">Исследователь океана</p>
     </div>
     <button type="submit" class="profile__add-button"></button>
+  </section>
+
+  <section class="places body-container">
+    <figure class="places__item">
+      <img src="./images/kchr.png" alt="Карачаевск" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Карачаевск</h2>
+        <div class="places__like-icon"></div>
+      </figcaption>
+    </figure>
+    <figure class="places__item">
+      <img src="./images/elbrus.png" alt="Эльбрус" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Гора Эльбрус</h2>
+        <div class="places__like-icon"></div>
+    </figure>
+    <figure class="places__item">
+      <img src="./images/dombai.png" alt="Домбай" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Домбай</h2>
+        <div class="places__like-icon"></div>
+    </figure>
+    <figure class="places__item">
+      <img src="./images/elbrus.png" alt="Эльбрус" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Гора Эльбрус</h2>
+        <div class="places__like-icon"></div>
+    </figure>
+    <figure class="places__item">
+      <img src="./images/dombai2.png" alt="Домбай" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Домбай</h2>
+        <div class="places__like-icon"></div>
+    </figure>
+    <figure class="places__item">
+      <img src="./images/kchr.png" alt="КЧР" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title">Карачаево-Черкессия</h2>
+        <div class="places__like-icon"></div>
+    </figure>
+  </section>
+
+  <footer class="footer body-container">
+    <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+  </footer>
+
+  <div class="popup">
+    <form action="#" class="popup__container" autocomplete="on" name="Редактиование профиля">
+      <button type="submit" class="popup__close"></button>
+      <fieldset class="popup__field">
+        <legend class="popup__title">Редактировать профиль</legend>
+        <input type="text" class="popup__name" value="Жак-Ив Кусто">
+        <input type="text" class="popup__description" value="Исследователь океана">
+        <button type="submit" class="popup__submit">Сохранить</button>
+      </fieldset>
+    </form>
   </div>
+<script src="./scripts/index.js" defer></script>
 </body>
 </html>

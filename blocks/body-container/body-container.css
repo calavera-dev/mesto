@@ -1,4 +1,17 @@
-.container {
+.body-container {
   max-width: 282px;
   margin: 0 auto;
 }
+
+@media (min-width: 768px) {
+  .body-container {
+    max-width: 581px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .body-container {
+    max-width: 880px;
+  }
+}
+

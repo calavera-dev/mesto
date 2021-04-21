@@ -10,4 +10,19 @@
 }
 .profile__add-button:hover {
   opacity: 0.6;
+  cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  .profile__add-button {
+    width: 130px;
+    margin: 0px 0px 0px auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile__add-button {
+    width: 150px;
+  }
+}
+
