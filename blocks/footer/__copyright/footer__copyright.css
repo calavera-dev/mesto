@@ -6,3 +6,11 @@
   line-height: 17px;
   margin: 48px 0px 36px;
 }
+
+@media (min-width: 768px) {
+  .footer__copyright  {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 67px 0px 60px;
+  }
+}

@@ -12,3 +12,12 @@
   opacity: 0.6;
   cursor: pointer;
 }
+
+@media (min-width: 768px) {
+  .profile__edit-button {
+    position: static;
+    height: 24px;
+    width: 24px;
+    margin: auto 0px auto 18px;
+  }
+}

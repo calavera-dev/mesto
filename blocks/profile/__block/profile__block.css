@@ -1,5 +1,12 @@
 .profile__block {
+  max-width: 189px;
   position: relative;
-  display: flex;
-  flex-direction: row;
+}
+
+@media (min-width: 768px) {
+  .profile__block  {
+    position: static;
+    display: flex;
+    max-width: 336px;
+  }
 }
