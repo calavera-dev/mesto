@@ -1,13 +1,5 @@
 .popup__field {
-  border: 0 none;
+  border: 0;
   padding: 0;
-  max-width: 238px;
-  margin: 25px auto 0px;
-}
-
-@media (min-width: 1200px) {
-  .popup__field {
-    max-width: 358px;
-    margin: 34px auto 0px;
-  }
+  margin: 0;
 }

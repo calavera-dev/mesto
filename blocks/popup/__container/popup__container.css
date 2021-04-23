@@ -2,7 +2,6 @@
   color: #000;
   background-color: #fff;
   width: 282px;
-  min-height: 322px;
   border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -11,9 +10,8 @@
   box-sizing: border-box;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .popup__container {
     width: 430px;
-    min-height: 330px;
   }
 }

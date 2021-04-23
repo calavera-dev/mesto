@@ -5,6 +5,9 @@
   font-size: 27px;
   line-height: 33px;
   margin: 0 auto;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -17,8 +20,8 @@
 
 @media (min-width: 1200px) {
   .profile__name {
-    max-width: 336px;
     font-size: 42px;
     line-height: 48px;
+    max-width: 336px;
   }
 }
