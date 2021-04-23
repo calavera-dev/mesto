@@ -5,7 +5,7 @@
   line-height: 17px;
   margin: 8px auto 0px;
   max-width: 282px;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
