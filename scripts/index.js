@@ -7,19 +7,20 @@ let jobInput = formElement.querySelector('.popup__input_user_occupation');
 let profileName = document.querySelector('.profile__name');
 let profileOcupation = document.querySelector('.profile__description');
 
-function openPopup (evt) {
-  evt.preventDefault();
+function openPopup() {
   popup.classList.add('popup_is-opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileOcupation.textContent;
 }
-function closePopup (evt) {
-  evt.preventDefault();
+
+function closePopup() {
   popup.classList.remove('popup_is-opened');
 }
-function formSubmitHandler (evt) {
-	evt.preventDefault();
+function formSubmitHandler(evt) {
+  evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileOcupation.textContent = jobInput.value;
-  closePopup(evt);
+  closePopup();
 }
 
 popupOpenButton.addEventListener('click', openPopup);
