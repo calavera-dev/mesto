@@ -27,48 +27,6 @@
     </section>
 
     <section class="places">
-      <figure class="places__item">
-        <img src="./images/КЧР.jpg" alt="Карачаевск" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Карачаевск</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
-      <figure class="places__item">
-        <img src="./images/Эльбрус.jpg" alt="Эльбрус" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Гора Эльбрус</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
-      <figure class="places__item">
-        <img src="./images/Домбай.jpg" alt="Домбай" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Домбай</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
-      <figure class="places__item">
-        <img src="./images/Эльбрус.jpg" alt="Эльбрус" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Гора Эльбрус</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
-      <figure class="places__item">
-        <img src="./images/Домбай.jpg" alt="Домбай" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Домбай</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
-      <figure class="places__item">
-        <img src="./images/КЧР.jpg" alt="КЧР" class="places__image">
-        <figcaption class="places__description">
-          <h2 class="places__title">Карачаево-Черкессия</h2>
-          <button type="button" class="places__like-icon"></button>
-        </figcaption>
-      </figure>
     </section>
   </main>
   <footer class="footer body-container">
@@ -89,6 +47,18 @@
       </form>
     </div>
   </div>
+
+  <template id="place-template">
+    <figure class="places__item">
+      <img src="#" alt="Место" class="places__image">
+      <figcaption class="places__description">
+        <h2 class="places__title"></h2>
+        <button type="button" class="places__like-icon"></button>
+      </figcaption>
+    </figure>
+  </template>
+
+
   <script src="./scripts/index.js" defer></script>
 </body>
 
