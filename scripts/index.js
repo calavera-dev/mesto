@@ -10,8 +10,8 @@ let popupCloseButton = document.querySelectorAll('.popup__close');
 let nameInput = popup.querySelector('.popup__input_user_name');
 let jobInput = popup.querySelector('.popup__input_user_occupation');
 
-let placeName = editPopup.querySelector('.popup__edit_place_name');
-let placeLink = editPopup.querySelector('.popup__edit_place_link');
+let placeName = editPopup.querySelector('.popup__input_place_name');
+let placeLink = editPopup.querySelector('.popup__input_place_link');
 
 let popupImage = document.querySelector('.popup__image');
 let popupCaption = document.querySelector('.popup__caption');
