@@ -1,0 +1,5 @@
+.places__like-icon_like_active {
+  background: url(../../../../images/like-icon-active.svg) center no-repeat;
+  opacity: 1;
+  padding: 0;
+}
