@@ -1,54 +1,26 @@
-let popup = document.querySelector('.popup_type_edit-profile');
-let editPopup = document.querySelector('.popup_type_add-place');
-let imagePopupElement = document.querySelector('.popup_type_image-overlay');
+const popupEditProfile = document.querySelector('.popup_type_edit-profile');
+const popupAddPlace = document.querySelector('.popup_type_add-place');
+const imagePopupElement = document.querySelector('.popup_type_image-overlay');
 
-let popupOpenButton = document.querySelector('.profile__edit-button');
-let placeAddButton = document.querySelector('.profile__add-button');
+const profileEditButton = document.querySelector('.profile__edit-button');
+const addPlaceButton = document.querySelector('.profile__add-button');
 
-let popupCloseButton = document.querySelectorAll('.popup__close');
+const popupCloseButtons = document.querySelectorAll('.popup__close');
 
-let nameInput = popup.querySelector('.popup__input_user_name');
-let jobInput = popup.querySelector('.popup__input_user_occupation');
+const nameInput = popupEditProfile.querySelector('.popup__input_user_name');
+const jobInput = popupEditProfile.querySelector('.popup__input_user_occupation');
 
-let placeName = editPopup.querySelector('.popup__input_place_name');
-let placeLink = editPopup.querySelector('.popup__input_place_link');
+const placeName = popupAddPlace.querySelector('.popup__input_place_name');
+const placeLink = popupAddPlace.querySelector('.popup__input_place_link');
 
-let popupImage = document.querySelector('.popup__image');
-let popupCaption = document.querySelector('.popup__caption');
+const popupImage = document.querySelector('.popup__image');
+const popupCaption = document.querySelector('.popup__caption');
 
-let profileName = document.querySelector('.profile__name');
-let profileOcupation = document.querySelector('.profile__description');
-
+const profileName = document.querySelector('.profile__name');
+const profileOcupation = document.querySelector('.profile__description');
 
 const placeGrid = document.querySelector('.places');
 const placeTemplate = document.querySelector('#place-template');
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 function createPlace(currentCard) {
   const placesItem = placeTemplate.content.querySelector('.places__item').cloneNode(true);
@@ -59,6 +31,7 @@ function createPlace(currentCard) {
 
   placeImage.addEventListener('click', function() {
     popupImage.src = currentCard.link;
+    popupImage.alt = currentCard.name;
     popupCaption.textContent = currentCard.name;
     openPopup(imagePopupElement);
   });
@@ -81,19 +54,19 @@ initialCards.forEach(function(currentCard) {
   placeGrid.append(newPlace);
 });
 
-function formSubmitHandler(evt) {
+function handleProfileSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileOcupation.textContent = jobInput.value;
-  closePopup(popup);
+  closePopup(popupEditProfile);
 }
-function editFormSubmitHandler(evt) {
+function handleNewCardSubmit(evt) {
   evt.preventDefault();
-  const newCard = {}
-  newCard.name = placeName.value;
-  newCard.link = placeLink.value;
-  placeGrid.prepend(createPlace(newCard));
-  closePopup(editPopup);
+  placeGrid.prepend(createPlace({
+    name: placeName.value,
+    link: placeLink.value
+  }));
+  closePopup(popupAddPlace);
 }
 function openPopup(popupElement) {
   popupElement.classList.add('popup_is-opened');
@@ -102,24 +75,21 @@ function closePopup(popupElement) {
   popupElement.classList.remove('popup_is-opened');
 }
 
-popupOpenButton.addEventListener('click', function() {
+profileEditButton.addEventListener('click', function() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileOcupation.textContent;
-  openPopup(popup);
+  openPopup(popupEditProfile);
 });
-placeAddButton.addEventListener('click', function() {
+addPlaceButton.addEventListener('click', function() {
   placeName.value = "";
   placeLink.value = "";
-  openPopup(editPopup);
+  openPopup(popupAddPlace);
 });
-popupCloseButton[0].addEventListener('click', function() {
-  closePopup(popup);
-});
-popupCloseButton[1].addEventListener('click', function() {
-  closePopup(editPopup);
-});
-popupCloseButton[2].addEventListener('click', function() {
-  closePopup(imagePopupElement);
-});
-popup.addEventListener('submit', formSubmitHandler);
-editPopup.addEventListener('submit', editFormSubmitHandler);
+
+popupCloseButtons.forEach(item => {
+  item.addEventListener('click', function() {
+    closePopup(popupEditProfile);
+    closePopup(popupAddPlace);
+    closePopup(imagePopupElement);
+  })
+})
