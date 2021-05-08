@@ -29,27 +29,27 @@ function createPlace(currentCard) {
   const placeDelete = placesItem.querySelector('.places__trash-icon');
   const placeLikeButton = placesItem.querySelector('.places__like-icon');
 
-  placeImage.addEventListener('click', function() {
+  placeImage.addEventListener('click', function () {
     popupImage.src = currentCard.link;
     popupImage.alt = currentCard.name;
     popupCaption.textContent = currentCard.name;
     openPopup(imagePopupElement);
   });
-  
+
   placeImage.src = currentCard.link;
   placeTitle.textContent = currentCard.name;
   placeImage.alt = currentCard.name;
 
-  placeLikeButton.addEventListener('click', function(){
+  placeLikeButton.addEventListener('click', function () {
     placeLikeButton.classList.toggle('places__like-icon_like_active');
   })
-  placeDelete.addEventListener('click', function(e){
+  placeDelete.addEventListener('click', function (e) {
     e.target.closest('.places__item').remove();
   })
 
   return placesItem;
 }
-initialCards.forEach(function(currentCard) {
+initialCards.forEach(function (currentCard) {
   const newPlace = createPlace(currentCard);
   placeGrid.append(newPlace);
 });
@@ -75,21 +75,23 @@ function closePopup(popupElement) {
   popupElement.classList.remove('popup_is-opened');
 }
 
-profileEditButton.addEventListener('click', function() {
+profileEditButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileOcupation.textContent;
   openPopup(popupEditProfile);
 });
-addPlaceButton.addEventListener('click', function() {
+addPlaceButton.addEventListener('click', function () {
   placeName.value = "";
   placeLink.value = "";
   openPopup(popupAddPlace);
 });
 
 popupCloseButtons.forEach(item => {
-  item.addEventListener('click', function() {
-    closePopup(popupEditProfile);
-    closePopup(popupAddPlace);
-    closePopup(imagePopupElement);
-  })
-})
+    const popup = item.closest('.popup');
+    item.addEventListener('click', function () {
+      closePopup(popup);
+    })
+});
+
+popupEditProfile.addEventListener('submit', handleProfileSubmit);
+popupAddPlace.addEventListener('submit', handleNewCardSubmit);
