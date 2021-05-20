@@ -1,3 +1,13 @@
+const config = {
+  popupForm: '.popup__form',
+  popupInput: '.popup__input',
+  popupSubmit: '.popup__submit',
+  popupInputError: '.popup__input_type_error',
+  popupInputErrorActive: 'popup__input-error_active',
+};
+
+enableValidation(config);
+
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddPlace = document.querySelector('.popup_type_add-place');
 const imagePopupElement = document.querySelector('.popup_type_image-overlay');
@@ -46,9 +56,10 @@ function createPlace(currentCard) {
   placeDelete.addEventListener('click', function (e) {
     e.target.closest('.places__item').remove();
   })
-
+  
   return placesItem;
 }
+
 initialCards.forEach(function (currentCard) {
   const newPlace = createPlace(currentCard);
   placeGrid.append(newPlace);
@@ -68,12 +79,27 @@ function handleNewCardSubmit(evt) {
   }));
   closePopup(popupAddPlace);
 }
+
+function handleCloseViaEscape(evt) { 
+  if (evt.key === 'Escape') { 
+    closePopup(document.querySelector('.popup_is-opened')); 
+  } 
+}
+
 function openPopup(popupElement) {
   popupElement.classList.add('popup_is-opened');
+  document.addEventListener('keydown', handleCloseViaEscape);
 }
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_is-opened');
+  document.addEventListener('keydown', handleCloseViaEscape);
 }
+
+  popupEditProfile.addEventListener ('mousedown', function (event) {
+    if (event.target === event.currentTarget) {
+      closePopup(popupEditProfile);
+    }
+  })
 
 profileEditButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
@@ -87,10 +113,19 @@ addPlaceButton.addEventListener('click', function () {
 });
 
 popupCloseButtons.forEach(item => {
-    const popup = item.closest('.popup');
-    item.addEventListener('click', function () {
+  const popup = item.closest('.popup');
+  item.addEventListener('click', function () {
+    closePopup(popup);
+  })
+});
+
+const popupList = document.querySelectorAll('.popup');
+popupList.forEach((popup) => {
+  popup.addEventListener('click', (event) => {
+    if (event.target === popup) {
       closePopup(popup);
-    })
+    };
+  });
 });
 
 popupEditProfile.addEventListener('submit', handleProfileSubmit);

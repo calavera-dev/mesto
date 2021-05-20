@@ -39,9 +39,12 @@
       <form name="profile-edit" autocomplete="on" class="popup__form">
         <fieldset class="popup__field">
           <legend class="popup__title">Редактировать профиль</legend>
-          <input type="text" name="user-name" class="popup__input popup__input_user_name" value="Жак-Ив Кусто">
-          <input type="text" name="user-occupation" class="popup__input popup__input_user_occupation"
-            value="Исследователь океана">
+          <input type="text" id="user-name" minlength="2" maxlength="40" class="popup__input popup__input_user_name"
+            value="Жак-Ив Кусто" required>
+          <span class="popup__input-error" id="user-name-error"></span>
+          <input type="text" id="user-occupation" minlength="20" maxlength="200"
+            class="popup__input popup__input_user_occupation" value="Исследователь океана" required>
+          <span class="popup__input-error" id="user-occupation-error"></span>
           <button type="submit" class="popup__submit">Сохранить</button>
         </fieldset>
       </form>
@@ -54,9 +57,12 @@
       <form name="place-edit" autocomplete="on" class="popup__form">
         <fieldset class="popup__field">
           <legend class="popup__title">Новое место</legend>
-          <input type="text" name="user-name" class="popup__input popup__input_place_name" placeholder="Название" required>
-          <input type="text" name="user-occupation" class="popup__input popup__input_place_link"
+          <input type="text" id="place-title" minlength="2" maxlength="30" class="popup__input popup__input_place_name"
+            placeholder="Название" required>
+          <span class="popup__input-error" id="place-title-error"></span>
+          <input type="url" id="place-link" class="popup__input popup__input_place_link"
             placeholder="Ссылка на картинку" required>
+          <span class="popup__input-error" id="place-link-error"></span>
           <button type="submit" class="popup__submit">Создать</button>
         </fieldset>
       </form>
@@ -84,9 +90,9 @@
     </figure>
   </template>
 
-
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js" defer></script>
-  <script src="./scripts/initial-cards.js"></script> 
+  <script src="./scripts/initial-cards.js"></script>
 </body>
 
 </html>

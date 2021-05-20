@@ -25,3 +25,10 @@
     line-height: 22px;
   }
 }
+.popup__submit:disabled {
+  background-color: #fff;
+  color: rgb(209, 203, 203);
+  border: 1px solid rgb(209, 203, 203);
+  opacity: 1;
+  cursor: inherit;
+}
