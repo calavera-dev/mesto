@@ -72,6 +72,7 @@ function handleProfileSubmit(evt) {
   profileOcupation.textContent = jobInput.value;
   closePopup(popupEditProfile);
 }
+
 function handleNewCardSubmit(evt) {
   evt.preventDefault();
   placeGrid.prepend(createPlace({
@@ -79,7 +80,9 @@ function handleNewCardSubmit(evt) {
     link: placeLink.value
   }));
   placeName.value = "";
+  placeName.dispatchEvent(new Event('input'));
   placeLink.value = "";
+  placeLink.dispatchEvent(new Event('input'));
   closePopup(popupAddPlace);
 }
 
@@ -89,7 +92,6 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
   popupElement.classList.remove('popup_is-opened');
 }
-
 
 popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {

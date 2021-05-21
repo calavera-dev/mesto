@@ -59,8 +59,3 @@ const enableValidation = (config) => {
     setIventListener(formElement, restConfig);
   })
 }
-
-const updateInputValue = (inputElement, value) => {
-  inputElement.value = value;
-  inputElement.dispatchEvent(new Event('input'));
-};
