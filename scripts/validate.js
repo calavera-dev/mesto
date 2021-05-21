@@ -1,4 +1,4 @@
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, config) => {
   const { popupInputError, popupInputErrorActive } = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.remove(popupInputError);
@@ -6,7 +6,7 @@ const hideInputError = (formElement, inputElement) => {
   errorElement.textContent = '';
 }
 
-const showInputError = (formElement, inputElement) => {
+const showInputError = (formElement, inputElement, config) => {
   const { popupInputError, popupInputErrorActive } = config;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.add(popupInputError);
