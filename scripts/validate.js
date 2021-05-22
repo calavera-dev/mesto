@@ -24,7 +24,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
 
 const hasInvalidInput = (inputList) => {
   return inputList.some(inputElement => !inputElement.validity.valid)
-}
+} 
 
 const toggleButtonState = (buttonElement, inputList) => {
   if (hasInvalidInput(inputList)) {
