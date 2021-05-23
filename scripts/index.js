@@ -101,12 +101,6 @@ function closePopup(popupElement) {
   document.removeEventListener('keydown', handleCloseViaEscape);
 }
 
-popupEditProfile.addEventListener('mousedown', function (event) {
-  if (event.target === event.currentTarget) {
-    closePopup(popupEditProfile);
-  }
-})
-
 profileEditButton.addEventListener('click', function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileOcupation.textContent;
